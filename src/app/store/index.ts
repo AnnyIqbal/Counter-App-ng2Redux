@@ -18,8 +18,8 @@ export class StoreModule {
                     // console.dir(this.ngRedux.configureStore)
                     this.ngRedux.configureStore (
                         reducer,        //reducer
-                        {},              //default state,
-                        null,
+                        {},             //default state,
+                        null,           //middleware (specify it must for correct mapping of parameters)
                         [devTool.isEnabled() ? devTool.enhancer() : f => f] // Enhancers
                     )
                   }
