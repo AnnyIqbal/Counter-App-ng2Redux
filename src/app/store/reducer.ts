@@ -1,13 +1,13 @@
-import { Action } from './actions';
+var initialState = { counter: 0 };
 
-const initialState: { counter: number } = { counter: 0};
-
-export const reducer = function(state: { counter: number } = initialState, action: { type: string }): {} {
+export const counterReducer = function(state = initialState, action: { type: string, payload?: any }): {} {
     switch(action.type) {
         case 'INCREMENT':
-            return state.counter + 1;
+            console.log('state INCREMENT ', state);
+            return Object.assign({}, state,  {counter: state.counter + 1}) ;
         case 'DECREMENT':
-            return state.counter - 1;
+            console.log('state DECREMENT ', state, Object.assign({}, state, {counter: state.counter - 1})  )
+            return Object.assign({}, state, {counter: state.counter - 1}) ;
         default:
             return state;
     }
