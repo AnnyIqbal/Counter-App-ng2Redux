@@ -15,7 +15,8 @@ export class AppComponent {
     @select(['counter']) state$: Observable<any>; // @select(['property of obj if u have a single reducer, else 1st arg is obj 2nd arg is its property'])
     constructor(private a: MyAction) { //injecting actions
       this.state$.subscribe(x => {
-        console.log('state: ', x);
+        console.log('state: ', x); //state.counter milra hai
+        this.counter = x;
       });
     }
 
@@ -26,6 +27,6 @@ export class AppComponent {
   }
   decrement() {
     // this.counter--;
-     this.a.decrement();
+    this.a.decrement();
   }
 }
