@@ -2,12 +2,12 @@
   {{title}}
 </h1>
 
-<h1>{{counter}}</h1>
+<h1>{{ state$ | async }}</h1>
 
 <button (click)='increment()'> + </button>
 <button (click)='decrement()'> - </button>
 
 <div id="state">
   <h3> State Management </h3>
-  <p> Current state: {{counter}} </p>
+  <p> Current state: {{ state$ | async }} </p>
 </div>

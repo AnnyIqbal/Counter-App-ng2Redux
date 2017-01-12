@@ -10,23 +10,22 @@ import {MyAction } from './store'
 })
 export class AppComponent {
   title = 'Redux Counter App!';
-  counter: number = 0; // initial state
+  // counter: number = 0; // initial state, values are updated by subscribing the observable in constructor
 
     @select(['counter']) state$: Observable<any>; // @select(['property of obj if u have a single reducer, else 1st arg is obj 2nd arg is its property'])
     constructor(private a: MyAction) { //injecting actions
-      this.state$.subscribe(x => {
-        console.log('state: ', x); //state.counter milra hai
-        this.counter = x;
-      });
+      // instead of subscribing, used async pipe
+      // this.state$.subscribe(x => {
+      //   console.log('state: ', x); //state.counter milra hai
+      //   this.counter = x;
+      // });
     }
 
 // actions
   increment() {
-    // this.counter++;
     this.a.increment();
   }
   decrement() {
-    // this.counter--;
     this.a.decrement();
   }
 }
