@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { NgRedux, select, DevToolsExtension } from 'ng2-redux';
-import { Observable } from 'rxjs';
+
 //reducer
 import { counterReducer, initialState } from './reducer';
 

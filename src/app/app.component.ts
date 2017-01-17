@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgRedux, select } from 'ng2-redux';
 import { Observable } from 'rxjs';
-import {MyAction } from './store'
+import { MyAction } from './store'
 
 @Component({
   selector: 'app-root',
