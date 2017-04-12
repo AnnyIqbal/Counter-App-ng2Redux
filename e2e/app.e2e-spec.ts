@@ -1,10 +1,10 @@
-import { CounterAppPage } from './app.po';
+import { CounterAppNg2ReduxPage } from './app.po';
 
-describe('counter-app App', function() {
-  let page: CounterAppPage;
+describe('counter-app-ng2-redux App', () => {
+  let page: CounterAppNg2ReduxPage;
 
   beforeEach(() => {
-    page = new CounterAppPage();
+    page = new CounterAppNg2ReduxPage();
   });
 
   it('should display message saying app works', () => {

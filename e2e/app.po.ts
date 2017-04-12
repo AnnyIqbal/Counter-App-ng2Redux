@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class CounterAppPage {
+export class CounterAppNg2ReduxPage {
   navigateTo() {
     return browser.get('/');
   }

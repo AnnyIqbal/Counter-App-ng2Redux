@@ -6,6 +6,9 @@ export class MyAction {
 
   static INCREMENT: string = 'INCREMENT';
   static DECREMENT: string = 'DECREMENT';
+  static INCREMENT_TIME: string = 'INCREMENT_TIME';
+  static DECREMENT_TIME: string = 'DECREMENT_TIME';
+  static ERROR: string = 'ERROR';
 
   constructor(private ngRedux: NgRedux<{}>) { }
 
