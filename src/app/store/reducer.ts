@@ -6,6 +6,12 @@ export const counterReducer = function(state = initialState, action: { type: str
             // console.log('state INCREMENT ', state);
             console.log('++', action.payload);
             return Object.assign({}, state,  {counter: state.counter + 1}) ;
+              
+            case 'INCREMENT_TIME':
+            // console.log('state INCREMENT ', state);
+            console.log('++ INCREMENT_TIME', action.payload);
+            return Object.assign({}, state,  {counter: state.counter + 1}) ;
+            
         case 'DECREMENT':
             // console.log('state DECREMENT ', state, Object.assign({}, state, {counter: state.counter - 1}));
             console.log('--', action.payload);
