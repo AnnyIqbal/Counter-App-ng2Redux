@@ -13,11 +13,17 @@ export class MyAction {
   constructor(private ngRedux: NgRedux<{}>) { }
 
   increment() {
-    this.ngRedux.dispatch({ type: MyAction.INCREMENT });
+    this.ngRedux.dispatch({
+        type: MyAction.INCREMENT,
+        payload: 'mmwwinc' 
+      });
   }
 
   decrement() {
-    this.ngRedux.dispatch({ type: MyAction.DECREMENT });
+    this.ngRedux.dispatch({ 
+        type: MyAction.DECREMENT,
+        payload: 'mmwwdec' 
+    });
   }
 
 }

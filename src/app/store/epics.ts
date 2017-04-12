@@ -8,13 +8,11 @@ export class Epics {
 
     incrementTime = (action$) =>
         action$.ofType(MyAction.INCREMENT_TIME)
-            .take(3)
-            .setTimeout(function() {
-                return {
+            .mapTo({
                     type: MyAction.INCREMENT,
-                    payload: null
-                };
-            }, 3000)
+                    payload: 'increment time'
+                },
+                console.log('-------'))
             .catch(err => Observable.of({
                 type: MyAction.ERROR
             })
@@ -22,13 +20,11 @@ export class Epics {
 
     decrementTime = (action$) =>
         action$.ofType(MyAction.DECREMENT_TIME)
-            .take(3)
-            .setTimeout(function () {
-                return {
+            .mapTo({
                     type: MyAction.DECREMENT,
-                    payload: null
-                };
-            }, 3000)
+                    payload: 'decrement time'
+                },
+                console.log('|||||||||'))
             .catch(err => Observable.of({
                 type: MyAction.ERROR
             })
