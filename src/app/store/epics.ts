@@ -7,12 +7,12 @@ export class Epics {
     constructor() { }
 
     incrementTime = (action$) =>
-        action$.ofType(MyAction.INCREMENT)
-            .do((x) => { console.log(x, "ssssssssssssssssssssssssssss") })
+        action$.ofType(MyAction.INCREMENT) // the action dispatched by the app is input to the epic
+            .do((x) => { console.log(x, "INCREMENT OBJ") })
             .switchMap(() => {
-                console.log("vvvvvvvvvvvvvv") 
-                return Observable.of( {
-                    type: MyAction.INCREMENT_TIME,
+                // console.log("vvvvvvvvvvvvvv") 
+                return Observable.of({
+                    type: MyAction.INCREMENT_TIME, // the action sent to reducer is the output from epic
                     payload: 'increment time'
                 })
             })
@@ -22,12 +22,14 @@ export class Epics {
             );
 
     decrementTime = (action$) =>
-        action$.ofType(MyAction.DECREMENT_TIME)
-            .mapTo({
-                type: MyAction.DECREMENT,
-                payload: 'decrement time'
-            },
-            console.log('|||||||||'))
+        action$.ofType(MyAction.DECREMENT)
+            .do((x) => { console.log(x, "DECREMENT OBJ") })
+            .switchMap(() => {
+                return Observable.of({
+                    type: MyAction.DECREMENT_TIME,
+                    payload: 'decrement time'
+                })
+            })
             .catch(err => Observable.of({
                 type: MyAction.ERROR
             })
