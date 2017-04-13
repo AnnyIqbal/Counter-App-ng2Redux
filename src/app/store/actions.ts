@@ -15,14 +15,14 @@ export class MyAction {
   increment() {
     this.ngRedux.dispatch({
         type: MyAction.INCREMENT,
-        payload: 'inc' // just for trial value
+        payload: 'inc' // trial value
       });
   }
 
   decrement() {
     this.ngRedux.dispatch({ 
         type: MyAction.DECREMENT,
-        payload: 'dec' 
+        payload: 'dec' // trial value
     });
   }
 
