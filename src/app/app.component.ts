@@ -28,4 +28,7 @@ export class AppComponent {
   decrement() {
     this.a.decrement();
   }
+  incrementIfOdd() {
+    this.a.incrementIfOdd();
+  }
 }

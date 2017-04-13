@@ -9,7 +9,8 @@ export class MyAction {
   static INCREMENT_TIME: string = 'INCREMENT_TIME';
   static DECREMENT_TIME: string = 'DECREMENT_TIME';
   static ERROR: string = 'ERROR';
-
+  static ODD: string = 'ODD';
+  
   constructor(private ngRedux: NgRedux<{}>) { }
 
   increment() {
@@ -26,4 +27,10 @@ export class MyAction {
     });
   }
 
+  incrementIfOdd() {
+    this.ngRedux.dispatch({
+        type: MyAction.ODD,
+        payload: 'incOdd' // trial value
+      });
+  }
 }

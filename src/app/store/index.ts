@@ -22,7 +22,8 @@ export class StoreModule {
                 ) {
                     const middleware = [
                         createEpicMiddleware(this.epics.incrementTime),
-                        createEpicMiddleware(this.epics.decrementTime)
+                        createEpicMiddleware(this.epics.decrementTime),
+                        createEpicMiddleware(this.epics.incrementIfOdd)
                     ];
 
                     // console.dir(this.ngRedux.configureStore) //just to log it
